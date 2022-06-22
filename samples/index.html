@@ -1,5 +1,22 @@
 <html>
-  <body>
-    <script src="./db.json"></script>
-  </body> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/json2html/2.2.1/json2html.min.js"></script>
+
+  <script>
+      let template = {'<>':'div','html':'${title} ${year}'};
+
+      let data = [
+          {"title":"Heat","year":"1995"},
+          {"title":"Snatch","year":"2000"},
+          {"title":"Up","year":"2009"},
+          {"title":"Unforgiven","year":"1992"},
+          {"title":"Amadeus","year":"1984"}
+      ];
+
+      //native javascript
+      document.write( json2html.render(data,template) );
+
+      //or with jQuery
+      $("#result").json2html(data,template);
+
+  </script>
 </html>
